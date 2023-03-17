@@ -2,28 +2,32 @@ import React, { Component } from 'react';
 
 export class App extends Component {
   state = {
-    positive: 0,
+    good: 0,
     neutral: 0,
-    negative: 0,
+    bad: 0,
   };
   handleGoodIncrement(evt) {
     if (evt.target.textContent === 'Good') {
       this.setState({ good: this.state.good + 1 });
+      console.log(evt);
     }
-    console.log(evt);
   }
 
   render() {
-    const { state } = this.props;
+    const { good, neutral, bad } = this.state;
 
     return (
       <div>
-        <span>Please leave feedback</span>
+        <h1>Please leave feedback</h1>
         <button type="button" onClick={this.handleGoodIncrement}>
-          Good {state}
+          Good
         </button>
-        <button type="button">Neutral{state}</button>
-        <button type="button">Bad {state}</button>
+        <button type="button">Neutral</button>
+        <button type="button">Bad </button>
+        <h2>Statistics</h2>
+        <p>Good: {good}</p>
+        <p>Neutral: {neutral}</p>
+        <p>Bad: {bad}</p>
       </div>
     );
   }
