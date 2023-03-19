@@ -15,18 +15,22 @@ export class App extends Component {
 
   handleGoodIncrement = () => {
     this.setState({ good: this.state.good + 1 });
+    this.countTotalFeedback();
   };
   handleNeutralIncrement = () => {
     this.setState({ neutral: this.state.neutral + 1 });
+    this.countTotalFeedback();
   };
   handleBadIncrement = () => {
     this.setState({ bad: this.state.bad + 1 });
+    this.countTotalFeedback();
   };
 
   countTotalFeedback = () => {
     this.setState({
       total: this.state.good + this.state.neutral + this.state.bad,
     });
+    this.countPositiveFeedbackPercentage();
   };
 
   countPositiveFeedbackPercentage = () => {
