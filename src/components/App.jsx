@@ -41,16 +41,16 @@ export class App extends Component {
       <div>
         <Section title="Expresso Coffee Caffe [Please leave feedback]">
           <FeedbackOptions
-            onLeaveFeedback="Good"
-            options={this.handleGoodIncrement}
+            onLeaveFeedback={this.handleGoodIncrement}
+            options="Good"
           ></FeedbackOptions>
           <FeedbackOptions
-            onLeaveFeedback="Neutral"
-            options={this.handleNeutralIncrement}
+            onLeaveFeedback={this.handleNeutralIncrement}
+            options="Neutral"
           ></FeedbackOptions>
           <FeedbackOptions
-            onLeaveFeedback="Bad"
-            options={this.handleBadIncrement}
+            onLeaveFeedback={this.handleBadIncrement}
+            options="Bad"
           ></FeedbackOptions>
         </Section>
 
