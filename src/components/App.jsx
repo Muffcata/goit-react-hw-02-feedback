@@ -26,13 +26,13 @@ export class App extends Component {
 
   countTotalFeedback = () => {
     this.setState({
-      total: this.good + this.neutral + this.bad,
+      total: this.state.good + this.state.neutral + this.state.bad,
     });
   };
 
   countPositiveFeedbackPercentage = () => {
     this.setState({
-      positive: Math.round((this.good / this.total) * 100),
+      positive: Math.round((this.state.good / this.state.total) * 100),
     });
   };
 
