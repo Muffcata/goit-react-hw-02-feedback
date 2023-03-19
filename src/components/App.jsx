@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Statistics } from './Statistics/statistics';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
+import { Section } from './Section/Section';
 
 export class App extends Component {
   state = {
@@ -36,30 +37,31 @@ export class App extends Component {
 
     return (
       <div>
-        <h1>Please leave feedback</h1>
-        <FeedbackOptions
-          onLeaveFeedback="good"
-          options={this.handleGoodIncrement}
-        ></FeedbackOptions>
-        <FeedbackOptions
-          onLeaveFeedback="neutral"
-          options={this.handleNeutralIncrement}
-        ></FeedbackOptions>
-        <FeedbackOptions
-          onLeaveFeedback="bad"
-          options={this.handleBadIncrement}
-        ></FeedbackOptions>
-        {/* <button onClick={this.handleGoodIncrement}>Good</button>
+        <Section title="Expresso Coffee Caffe [Please leave feedback]">
+          <FeedbackOptions
+            onLeaveFeedback="good"
+            options={this.handleGoodIncrement}
+          ></FeedbackOptions>
+          <FeedbackOptions
+            onLeaveFeedback="neutral"
+            options={this.handleNeutralIncrement}
+          ></FeedbackOptions>
+          <FeedbackOptions
+            onLeaveFeedback="bad"
+            options={this.handleBadIncrement}
+          ></FeedbackOptions>
+          {/* <button onClick={this.handleGoodIncrement}>Good</button>
         <button onClick={this.handleNeutralIncrement}>Neutral</button>
         <button onClick={this.handleBadIncrement}>Bad </button> */}
-        <h2>Statistics</h2>
-        <Statistics
-          good={good}
-          bad={bad}
-          neutral={neutral}
-          total={total}
-          positivePercentage={positive}
-        />
+          <h2>Statistics</h2>
+          <Statistics
+            good={good}
+            bad={bad}
+            neutral={neutral}
+            total={total}
+            positivePercentage={positive}
+          />
+        </Section>
       </div>
     );
   }
