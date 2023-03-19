@@ -3,6 +3,7 @@ import { Statistics } from './Statistics/statistics';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Section } from './Section/Section';
 import { Notification } from './Notification/Notification';
+import { PropTypes } from 'prop-types';
 
 export class App extends Component {
   state = {
@@ -30,44 +31,39 @@ export class App extends Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    this.setState(state => ({
-      ...state,
-      positive: Math.round((state.good / state.total) * 100),
-    }));
+    this.setState({
+      positive: Math.round((this.good / this.total) * 100),
+    });
   };
 
   render() {
-    const { good, neutral, bad, total, positive } = this.state;
-
     return (
       <div>
         <Section title="Expresso Coffee Caffe [Please leave feedback]">
           <FeedbackOptions
-            onLeaveFeedback="good"
+            onLeaveFeedback="Good"
             options={this.handleGoodIncrement}
           ></FeedbackOptions>
           <FeedbackOptions
-            onLeaveFeedback="neutral"
+            onLeaveFeedback="Neutral"
             options={this.handleNeutralIncrement}
           ></FeedbackOptions>
           <FeedbackOptions
-            onLeaveFeedback="bad"
+            onLeaveFeedback="Bad"
             options={this.handleBadIncrement}
           ></FeedbackOptions>
         </Section>
-        {/* <button onClick={this.handleGoodIncrement}>Good</button>
-        <button onClick={this.handleNeutralIncrement}>Neutral</button>
-        <button onClick={this.handleBadIncrement}>Bad </button> */}
+
         <Section title="Statistics">
-          {total === 0 ? (
+          {this.state.total === 0 ? (
             <Notification message="There is no feedback" />
           ) : (
             <Statistics
-              good={good}
-              bad={bad}
-              neutral={neutral}
-              total={total}
-              positivePercentage={positive}
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.state.total}
+              positivePercentage={this.state.positive}
             />
           )}
         </Section>
