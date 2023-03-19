@@ -16,21 +16,23 @@ export class App extends Component {
   handleGoodIncrement = () => {
     this.setState({ good: this.state.good + 1 });
     this.countTotalFeedback();
+    this.countPositiveFeedbackPercentage();
   };
   handleNeutralIncrement = () => {
     this.setState({ neutral: this.state.neutral + 1 });
     this.countTotalFeedback();
+    this.countPositiveFeedbackPercentage();
   };
   handleBadIncrement = () => {
     this.setState({ bad: this.state.bad + 1 });
     this.countTotalFeedback();
+    this.countPositiveFeedbackPercentage();
   };
 
   countTotalFeedback = () => {
     this.setState({
       total: this.state.good + this.state.neutral + this.state.bad,
     });
-    this.countPositiveFeedbackPercentage();
   };
 
   countPositiveFeedbackPercentage = () => {
