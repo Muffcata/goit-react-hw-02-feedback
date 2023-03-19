@@ -16,23 +16,21 @@ export class App extends Component {
   handleGoodIncrement = () => {
     this.setState({ good: this.state.good + 1 });
     this.countTotalFeedback();
-    this.countPositiveFeedbackPercentage();
   };
   handleNeutralIncrement = () => {
     this.setState({ neutral: this.state.neutral + 1 });
     this.countTotalFeedback();
-    this.countPositiveFeedbackPercentage();
   };
   handleBadIncrement = () => {
     this.setState({ bad: this.state.bad + 1 });
     this.countTotalFeedback();
-    this.countPositiveFeedbackPercentage();
   };
 
   countTotalFeedback = () => {
     this.setState({
       total: this.state.good + this.state.neutral + this.state.bad,
     });
+    this.countPositiveFeedbackPercentage();
   };
 
   countPositiveFeedbackPercentage = () => {
@@ -40,6 +38,24 @@ export class App extends Component {
       positive: Math.round((this.state.good / this.state.total) * 100),
     });
   };
+
+  // handleIncrement = options => {
+  //   switch (options) {
+  //     case 'good':
+  //       this.setState({ good: this.state.good + 1 });
+  //       this.countTotalFeedback();
+  //       break;
+
+  //     case 'neutral':
+  //       this.setState({ neutral: this.state.neutral + 1 });
+  //       this.countTotalFeedback();
+  //       break;
+  //     case 'bad':
+  //       this.setState({ bad: this.state.bad + 1 });
+  //       this.countTotalFeedback();
+  //       break;
+  //   }
+  // };
 
   render() {
     return (
