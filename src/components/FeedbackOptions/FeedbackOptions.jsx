@@ -4,8 +4,10 @@ import style from './FeedbackOptions.module.css';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <div className={style.button}>
-      <button onClick={onLeaveFeedback}>{options}</button>
+    <div className={style.wrapper_btn}>
+      <button className={style.button} onClick={onLeaveFeedback}>
+        {options}
+      </button>
     </div>
   );
 };

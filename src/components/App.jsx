@@ -38,7 +38,6 @@ export class App extends Component {
       positive: Math.round((this.state.good / this.state.total) * 100),
     });
   };
-
   // handleIncrement = options => {
   //   switch (options) {
   //     case 'good':
@@ -59,7 +58,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <Section title="Expresso Coffee Caffe [Please leave feedback]">
           <FeedbackOptions
             onLeaveFeedback={this.handleGoodIncrement}
@@ -88,7 +87,7 @@ export class App extends Component {
             />
           )}
         </Section>
-      </div>
+      </>
     );
   }
 }
