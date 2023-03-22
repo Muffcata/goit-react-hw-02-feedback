@@ -15,4 +15,5 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 FeedbackOptions.propTypes = {
   onLeaveFeedback: PropTypes.func,
   options: PropTypes.string,
+  onClick: PropTypes.func,
 };
