@@ -43,7 +43,10 @@ export class App extends Component {
   render() {
     return (
       <>
-        <Section title="Expresso Coffee Caffe [Please leave feedback]">
+        <Section
+          title="Expresso Coffee Caffe "
+          subtitle="[Please leave feedback]"
+        >
           <FeedbackOptions
             onLeaveFeedback={this.handleGoodIncrement}
             options="Good"

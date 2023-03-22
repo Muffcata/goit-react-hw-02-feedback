@@ -1,4 +1,6 @@
 .stats {
   display: block;
-  padding-left: 20px;
+  margin-left: 40px;
+  font-size: 20px;
+  color: rgb(83, 50, 50);
 }
